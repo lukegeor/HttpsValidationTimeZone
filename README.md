@@ -7,6 +7,12 @@ if your server has a newly-created TLS certificate, if the age of the certificat
 validation fails with a NotTimeValid error in the certificate chain.
 
 This only occurs on Linux. I tested on Oracle Linux 8. I'm using .Net SDK 8.0.303 and runtime 8.0.7.
+This also only occurs if you've configured your HTTPS client to re-establish its connection with every request.
+In other words, setting the following.
+
+```csharp
+httpClient.DefaultRequestHeaders.ConnectionClose = true;
+```
 
 ## Steps To Reproduce
 You can test this yourself with any HTTPS server where you're providing your own TLS cert, but I've provided a server in this repo.
