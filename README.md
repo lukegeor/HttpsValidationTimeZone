@@ -37,7 +37,7 @@ You'll need to trust this self-signed cert in order to avoid an untrusted root v
 On Oracle Linux 8, you do that by running the following.
 
 ```bash
-cp server.crt /etc/pki/ca-trust/source/anchors
+sudo cp server.crt /etc/pki/ca-trust/source/anchors
 sudo update-ca-trust enable
 sudo update-ca-trust extract
 ```
